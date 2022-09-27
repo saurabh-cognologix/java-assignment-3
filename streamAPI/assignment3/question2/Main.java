@@ -3,6 +3,7 @@ package corejava.streamAPI.assignment3.question2;
 import corejava.streamAPI.assignment3.question2.Solution.Question1.ServerList;
 import corejava.streamAPI.assignment3.question2.Solution.Question2.SortedServerName;
 import corejava.streamAPI.assignment3.question2.Solution.Question4.DistinctServerName;
+import corejava.streamAPI.assignment3.question2.Solution.Question5.FilteredRecordForAServer;
 import corejava.streamAPI.assignment3.question2.model.Server;
 import corejava.streamAPI.assignment3.question2.parser.ServerParser;
 
@@ -15,21 +16,28 @@ public class Main {
 
         ServerParser serverParser = new ServerParser();
         List<Server> serverList = serverParser.parseCSVFile(filePath);
-       // serverList.forEach(System.out::println);
+        // serverList.forEach(System.out::println);
 
 //1
         ServerList serverListObj = new ServerList();
-        Set<String> allServer =  serverListObj.getServerList(serverList);
-  //      allServer.forEach(System.out::println);
+        Set<String> allServer = serverListObj.getServerList(serverList);
+        //      allServer.forEach(System.out::println);
 
 //2
         SortedServerName sortedServerName = new SortedServerName();
         List<Server> sortedListOfServer = sortedServerName.sortedByServerName(serverList);
- //       sortedListOfServer.forEach(System.out::println);
+        //       sortedListOfServer.forEach(System.out::println);
 
-//3
+//4
         DistinctServerName distinctServerName = new DistinctServerName();
         List<String> distinctServer = distinctServerName.getDistinctServerName(serverList);
-        distinctServer.forEach(System.out::println);
+   //     distinctServer.forEach(System.out::println);
+
+//5
+        FilteredRecordForAServer filteredRecordForAServer = new FilteredRecordForAServer();
+        List<Server> serverData = filteredRecordForAServer.getFilteredRecordForServer(serverList);
+        serverData.forEach(System.out::println);
+
+
     }
 }

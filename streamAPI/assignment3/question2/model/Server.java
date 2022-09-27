@@ -13,6 +13,12 @@ public class Server {
         this.version = version;
     }
 
+    public Server(String typesOfApplication, String applicationName, String version) {
+        this.typesOfApplication = typesOfApplication;
+        this.applicationName = applicationName;
+        this.version = version;
+    }
+
     public Server() {
     }
 
