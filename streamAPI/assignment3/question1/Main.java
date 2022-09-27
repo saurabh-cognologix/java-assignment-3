@@ -18,22 +18,28 @@ public class Main {
 
         List<Student> studnetList = studentInputParser.parseCSVFile(filePath);
         //studnetList.forEach(System.out::println);
-
+// 1
         StuName stuName = new StuName();
         List<String> studentNameList = stuName.getStudentNameList(studnetList);
         //print
        // studentNameList.forEach(System.out::println);
 
-        //2
+// 2
        SortByName sortByName = new SortByName();
        List<Student> sortedNameList = sortByName.getSortByName(studnetList);
-       sortedNameList.forEach(System.out::println);
+       //printed all the data of sortedName list by lambda expression
+//        sortedNameList.forEach((e)-> System.out.println(e));
+
+       //printing all the data of sortedName list  by method reference
+ //      sortedNameList.forEach(System.out::println);
 
 
+// 3
         SortByIdDesc sortByIdDesc = new SortByIdDesc();
         List<Student> sortedStudentListById = sortByIdDesc.getIdInDescOrder(studnetList);
         //print
         //sortedStudentListById.forEach(System.out::println);
+// 4
 
         FilterStudentId filterStudentId = new FilterStudentId();
         List<Student> filteredStudetnId = filterStudentId.getFilteredStudentList(studnetList);
@@ -41,6 +47,7 @@ public class Main {
       //  filteredStudetnId.forEach(System.out::println);
 
 
+// 6
         StudentName studentName = new StudentName();
         List<Student> studentListByLength =  studentName.getStudnetName(studnetList);
         studentListByLength.forEach(System.out::println);
