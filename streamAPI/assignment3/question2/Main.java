@@ -1,6 +1,8 @@
 package corejava.streamAPI.assignment3.question2;
 
 import corejava.streamAPI.assignment3.question2.Solution.Question1.ServerList;
+import corejava.streamAPI.assignment3.question2.Solution.Question2.SortedServerName;
+import corejava.streamAPI.assignment3.question2.Solution.Question4.DistinctServerName;
 import corejava.streamAPI.assignment3.question2.model.Server;
 import corejava.streamAPI.assignment3.question2.parser.ServerParser;
 
@@ -18,7 +20,16 @@ public class Main {
 //1
         ServerList serverListObj = new ServerList();
         Set<String> allServer =  serverListObj.getServerList(serverList);
-        allServer.forEach(System.out::println);
+  //      allServer.forEach(System.out::println);
 
+//2
+        SortedServerName sortedServerName = new SortedServerName();
+        List<Server> sortedListOfServer = sortedServerName.sortedByServerName(serverList);
+ //       sortedListOfServer.forEach(System.out::println);
+
+//3
+        DistinctServerName distinctServerName = new DistinctServerName();
+        List<String> distinctServer = distinctServerName.getDistinctServerName(serverList);
+        distinctServer.forEach(System.out::println);
     }
 }
