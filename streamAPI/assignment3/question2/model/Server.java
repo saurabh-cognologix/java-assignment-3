@@ -13,9 +13,7 @@ public class Server {
         this.version = version;
     }
 
-    public Server(String typesOfApplication, String applicationName, String version) {
-        this.typesOfApplication = typesOfApplication;
-        this.applicationName = applicationName;
+    public Server(String version) {
         this.version = version;
     }
 

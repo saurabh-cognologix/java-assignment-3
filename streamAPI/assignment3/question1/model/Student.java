@@ -1,6 +1,8 @@
 package corejava.streamAPI.assignment3.question1.model;
 
-public class Student {
+import java.util.function.Function;
+
+public class Student  {
     private Integer studentId;
     private String studentName;
 

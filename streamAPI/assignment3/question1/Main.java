@@ -7,8 +7,10 @@ import corejava.streamAPI.assignment3.question1.solution.Question2.SortByName;
 import corejava.streamAPI.assignment3.question1.solution.Question3.SortByIdDesc;
 import corejava.streamAPI.assignment3.question1.solution.Question4.FilterStudentId;
 import corejava.streamAPI.assignment3.question1.solution.Question6.StudentName;
+import corejava.streamAPI.assignment3.question1.solution.Question7.MapCreation;
 
 import java.util.List;
+import java.util.Map;
 
 public class Main {
     public static void main(String[] args) {
@@ -50,7 +52,12 @@ public class Main {
 // 6
         StudentName studentName = new StudentName();
         List<Student> studentListByLength =  studentName.getStudnetName(studnetList);
-        studentListByLength.forEach(System.out::println);
+       // studentListByLength.forEach(System.out::println);
+
+//7
+        MapCreation mapCreation = new MapCreation();
+        Map<Integer,Student> stuMap = mapCreation.getMapValue(studnetList);
+        stuMap.forEach((k,v)-> System.out.println(k+"    "+v));
 
     }
 }

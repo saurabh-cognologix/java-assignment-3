@@ -4,6 +4,8 @@ import corejava.streamAPI.assignment3.question2.Solution.Question1.ServerList;
 import corejava.streamAPI.assignment3.question2.Solution.Question2.SortedServerName;
 import corejava.streamAPI.assignment3.question2.Solution.Question4.DistinctServerName;
 import corejava.streamAPI.assignment3.question2.Solution.Question5.FilteredRecordForAServer;
+import corejava.streamAPI.assignment3.question2.Solution.Question6.MapCreation;
+
 import corejava.streamAPI.assignment3.question2.model.Server;
 import corejava.streamAPI.assignment3.question2.parser.ServerParser;
 
@@ -34,9 +36,13 @@ public class Main {
    //     distinctServer.forEach(System.out::println);
 
 //5
-        FilteredRecordForAServer filteredRecordForAServer = new FilteredRecordForAServer();
+      /*  FilteredRecordForAServer filteredRecordForAServer = new FilteredRecordForAServer();
         List<Server> serverData = filteredRecordForAServer.getFilteredRecordForServer(serverList);
-        serverData.forEach(System.out::println);
+        serverData.forEach(System.out::println);*/
+//6
+        MapCreation mapCreation = new MapCreation();
+        mapCreation.getSortedSetOfSoftware(serverList);
+
 
 
     }
