@@ -8,25 +8,23 @@ import java.util.stream.Collectors;
 
 
 public class MapCreation {
-    public void getSortedSetOfSoftware(List<Server> serverList){
-        Map<String, TreeSet<String>> tempMap = new HashMap<>();
+    public Map<String,Set<String>> getSortedSetOfSoftware(List<Server> serverList){
+        Map<String,Set<String>> applicationVersionName = serverList.stream()
+                .collect(Collectors.toMap(
+                        Server::getApplicationName,
+                        server -> {
+                            Set<String> versions = new TreeSet<>(new ApplicationVersionComparator());
+                            versions.add(server.getVersion());
+                            return versions;
+                        },
+                        (prev,current)->{
+                            prev.addAll(current);
+                            return prev;
+                        }
+                ));
 
-        for(Server server : serverList){
-             String applicationName = server.getApplicationName();
-             String version = server.getVersion();
-             TreeSet<String> versionTreeSet = new TreeSet<>();
-             //versionTreeSet.add(version);
-            // tempMap.put(applicationName,versionTreeSet);
-             if(tempMap.containsKey(applicationName)){
-                 versionTreeSet.add(version);
-                  tempMap.put(applicationName,versionTreeSet);
-             }else if(!tempMap.containsKey(applicationName)){
-                 versionTreeSet.add(version);
-                 tempMap.put(applicationName,versionTreeSet);
-             }
-        }
+        //applicationVersionName.forEach((appicationName,sortedVersion)-> System.out.println(appicationName+" : "+sortedVersion));
 
-
-        tempMap.forEach((k,v)-> System.out.println(k+" :  "+v));
+        return applicationVersionName;
     }
 }
